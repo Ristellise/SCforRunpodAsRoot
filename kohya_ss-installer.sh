@@ -1,18 +1,18 @@
 #!/bin/bash
 
 # Update the package repository
-sudo apt update
+apt update
 
 # Add deadsnakes PPA for installing Python 3.10
-sudo apt install -y software-properties-common
-sudo add-apt-repository -y ppa:deadsnakes/ppa
-sudo apt update
+apt install -y software-properties-common
+add-apt-repository -y ppa:deadsnakes/ppa
+apt update
 
 # Install required packages
-sudo apt install -y python3.10 python3.10-tk python3.10-distutils python3.10-dev firefox git chromium-browser
+apt install -y python3.10 python3.10-tk python3.10-distutils python3.10-dev firefox git chromium-browser
 
 # Set Python 3.10 as the default Python interpreter
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
 
 # Update pip
 curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
@@ -62,6 +62,6 @@ python3.10 -m pip install --upgrade psutil
 echo "Kohya SS has been installed. To launch the app, close this window and open terminal then run accelerate config."
 echo "Accelerate config answers: this machine, no distributed training, NO, NO, NO, all, fp16."
 echo "Then run app using kohya_launcher.sh script."
-
+echo "Use python3.10"
 # Exit the script
 exit 0
